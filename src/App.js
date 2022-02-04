@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import "./App.css";
 
 function App() {
+  const dispatch = useDispatch();
+  const likes = useSelector((state) => state.likes);
+  console.log(likes);
+
+  const addLike = () => {};
+  const removeLike = () => {};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{likes}</h1>
+      <div>
+        <button onClick={() => addLike()}>Add like</button>
+        <button onClick={() => removeLike()}>Remove like</button>
+      </div>
     </div>
   );
 }
