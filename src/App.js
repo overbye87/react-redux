@@ -7,8 +7,12 @@ function App() {
   const likes = useSelector((state) => state.likes);
   console.log(likes);
 
-  const addLike = () => {};
-  const removeLike = () => {};
+  const addLike = () => {
+    dispatch({ type: "ADD_LIKE", payload: 5 });
+  };
+  const removeLike = () => {
+    dispatch({ type: "REMOVE_LIKE", payload: 5 });
+  };
 
   return (
     <div className="App">
