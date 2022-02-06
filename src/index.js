@@ -21,6 +21,8 @@ const reducer = (state = defaultState, action) => {
       return { ...state, likes: state.likes + action.payload };
     case "REMOVE_LIKE":
       return { ...state, likes: state.likes - action.payload };
+    case "CHANGE_LIKES":
+      return { ...state, likes: (state.likes = action.payload) };
     default:
       return state;
   }
